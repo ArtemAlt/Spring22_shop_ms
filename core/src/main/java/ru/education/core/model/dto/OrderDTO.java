@@ -1,4 +1,4 @@
-package ru.education.productms.models.DTO;
+package ru.education.core.model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -6,15 +6,16 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Data
-public class ProductDTO {
+public class OrderDTO {
+
     private Long id;
 
     private String name;
 
-    private List<String> category;
+    private List<String> productList;
 
 
 }

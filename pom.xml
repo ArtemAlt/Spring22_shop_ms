@@ -21,6 +21,7 @@
     <modules>
         <module>product-ms</module>
         <module>customer-ms</module>
+        <module>order-ms</module>
     </modules>
     <dependencies>
         <dependency>

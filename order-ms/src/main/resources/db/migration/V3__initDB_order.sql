@@ -1,0 +1,1 @@
+ALTER table "Order_ms".order_schema_ms.shop_order add column quantity int;

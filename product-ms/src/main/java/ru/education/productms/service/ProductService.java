@@ -16,23 +16,23 @@ import java.util.stream.Collectors;
 @Service
 public class ProductService {
     @Autowired
-    ProductRepository repository;
+    private ProductRepository repository;
     @Autowired
-    ProductMapper mapper;
+    private ProductMapper mapper;
     @Autowired
-    ProductDescriptionRepository descriptionRepository;
+    private ProductDescriptionRepository descriptionRepository;
     @Autowired
-    ProductDescriptionMapper descriptionMapper;
+    private ProductDescriptionMapper descriptionMapper;
     @Autowired
-    ProductItemRepository productItemRepository;
+    private ProductItemRepository productItemRepository;
     @Autowired
-    ProductItemMapper productItemMapper;
+    private ProductItemMapper productItemMapper;
     @Autowired
-    CategoryRepository categoryRepository;
+    private CategoryRepository categoryRepository;
     @Autowired
-    CategoryMapper categoryMapper;
+    private CategoryMapper categoryMapper;
     @Autowired
-    ProductTotalInformationMapper productTotalInfoMapper;
+    private ProductTotalInformationMapper productTotalInfoMapper;
 
     public Product findProductByName(String name) {
         return repository.findByName(name);
