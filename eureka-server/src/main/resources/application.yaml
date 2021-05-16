@@ -6,6 +6,7 @@ eureka:
     fetchRegistry: false
   instance:
     prefer-ip-address: true
+    hostname: localhost
 
 #spring:
 #  cloud:
@@ -14,3 +15,6 @@ eureka:
 spring:
   application:
     name: eureka-server
+  cloud:
+    discovery:
+      enabled: true

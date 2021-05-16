@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: api-gatewey
+  cloud:
+    discovery:
+      enabled: true
+    gateway:
+      metrics:
+        enabled: true
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: customer-ms
+          uri: lb://CUSTOMER-MS
+          predicates:
+            - Path=/customers/**
+        - id: product-ms
+          uri: lb://PRODUCT-MS
+          predicates:
+            - Path=/products/**
+        - id: order-ms
+          uri: lb://ORDER-MS
+          predicates:
+            - Path=/orders/**
+    loadbalancer:
+      ribbon:
+        enabled: false
+
+server:
+  port: 5555
+
+eureka:
+  client:
+    fetch-registry: true
+    service-url.defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}

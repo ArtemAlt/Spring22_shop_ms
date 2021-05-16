@@ -13,38 +13,38 @@ import java.util.List;
 public class FeignProductController {
     private final FeignProductControllerInterface productController;
 
-    @RequestMapping("/product/api/v1/products/find/{name}")
+    @RequestMapping("/products/api/v1/product/find/{name}")
     public ProductDTO findByName(@PathVariable(value = "name") String name) {
         return productController.findByName(name);
     }
 
-    @RequestMapping("/product/api/v1/products/findId/{id}")
+    @RequestMapping("/products/api/v1/product/findId/{id}")
     public ProductDTO findByID(@PathVariable(value ="id") Long id) {
         return productController.findByID(id);
     }
 
-    @RequestMapping("/product/api/v1/products/find/")
+    @RequestMapping("/products/api/v1/product/find/")
     public List<ProductDTO> findProductsByIDS(@RequestBody TwoProductIdsDto dto) {
         return productController.findProductsByIDS(dto);
     }
 
-    @RequestMapping("/product/api/v1/products/description/{name}")
+    @RequestMapping("/products/api/v1/product/description/{name}")
     @ResponseStatus(HttpStatus.OK)
     public ProductDescriptionDTO findDescriptionByName(@PathVariable(value ="name") String name) {
         return productController.findDescriptionByName(name);
     }
 
-    @RequestMapping("/product/api/v1/products/product-item/{name}")
+    @RequestMapping("/products/api/v1/product/product-item/{name}")
     public ProductItemDTO findProductItemByName(@PathVariable(value ="name") String name) {
         return productController.findProductItemByName(name);
     }
 
-    @GetMapping("/product/api/v1/products/total-information/{name}")
+    @GetMapping("/products/api/v1/product/total-information/{name}")
     public ProductTotalInformationDTO findALLInfoByName(@PathVariable(value ="name") String name) {
         return productController.findALLInfoByName(name);
     }
 
-    @GetMapping("/product/api/v1/products/products-in-category/{name}")
+    @GetMapping("/products/api/v1/product/products-in-category/{name}")
     public CategoryDTO findALLProductsByCategoryName(@PathVariable(value ="name") String name){
         return productController.findALLProductsByCategoryName(name);
     }

@@ -13,7 +13,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/api/v1/products")
+@RequestMapping("/api/v1/product")
 @EnableAspectJAutoProxy
 public class ProductController implements ProductControllerInterface {
     @Autowired
@@ -21,7 +21,7 @@ public class ProductController implements ProductControllerInterface {
 
     @GetMapping("/find/{name}") // ищет точное соответствие
     public ProductDTO findByName(@PathVariable(value = "name") String name) {
-        return service.findProductByNameDTO(name);
+        return service.findProductDTOByName(name); // todo - сделать обработку ошибок
     }
 
     @GetMapping("/findId/{id}")
@@ -42,7 +42,7 @@ public class ProductController implements ProductControllerInterface {
     }
     @GetMapping("/product-item/{name}")
     public ProductItemDTO findProductItemByName(@PathVariable(value = "name")  String name) {
-        return service.findProductItemByProductName(name);
+        return service.findProductItemDtoByProductName(name);
     }
     @GetMapping("/total-information/{name}")
     public ProductTotalInformationDTO findALLInfoByName(@PathVariable(value = "name")  String name) {

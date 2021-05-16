@@ -1,11 +1,16 @@
 server:
-  port: 0
+  port: 8888
   servlet:
     context-path: /feign
 spring:
+  cloud:
+    discovery:
+      enabled: true
   application:
     name: feign-ms
 eureka:
   client:
     fetch-registry: true
     service-url.defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    prefer-ip-address: true

@@ -35,27 +35,27 @@ public class ProductService {
     private ProductTotalInformationMapper productTotalInfoMapper;
 
     public Product findProductByName(String name) {
-        return repository.findByName(name);
+        return repository.findProductByName(name);
     }
 
-    public ProductDTO findProductByNameDTO(String name) {
-        Product response = repository.findByName(name);
+    public ProductDTO findProductDTOByName(String name) {
+        Product response = repository.findProductByName(name);
         System.out.println(response.getName());
         return mapper.toDTO(response);
     }
 
     public ProductDescriptionDTO findDescriptionByProductName(String name) {
-        Product product = repository.findByName(name);
+        Product product = repository.findProductByName(name);
         return descriptionMapper.toDTO(descriptionRepository.findDistinctByProduct(product));
     }
 
-    public ProductItemDTO findProductItemByProductName(String name){
-        Product product = repository.findByName(name);
+    public ProductItemDTO findProductItemDtoByProductName(String name){
+        Product product = repository.findProductByName(name);
        return productItemMapper.toDTO(productItemRepository.findProductItemByProduct(product));
     }
 
     public ProductTotalInformationDTO findAllInformationByProductName(String name) {
-        Product product = repository.findByName(name);
+        Product product = repository.findProductByName(name);
         ProductDescription pd = descriptionRepository.findDistinctByProduct(product);
         ProductItem pi = productItemRepository.findProductItemByProduct(product);
         return productTotalInfoMapper.toDTO(new ProductTotalInformation(product,pd,pi));
