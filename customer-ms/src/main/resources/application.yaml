@@ -1,10 +1,13 @@
 server:
   port: 0
   servlet:
-    context-path: /customer
+    context-path: /customers
 
 
 spring:
+  cloud:
+    discovery:
+      enabled: true
   datasource:
     url: jdbc:postgresql://localhost:5432/Customer_ms?currentSchema=customer_schema_ms
     username: postgres
@@ -19,6 +22,8 @@ jwt:
   secret: lsjdlfjlsjdfljsdllkfmlksdfojspodjf
 
 eureka:
+  instance:
+    prefer-ip-address: true
   client:
     fetch-registry: true
     service-url.defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}

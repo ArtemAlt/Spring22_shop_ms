@@ -1,7 +1,6 @@
 package ru.education.productms.interfaces;
 
 import ru.education.core.model.dto.*;
-import ru.education.productms.models.Entity.ProductTotalInformation;
 
 import java.util.List;
 

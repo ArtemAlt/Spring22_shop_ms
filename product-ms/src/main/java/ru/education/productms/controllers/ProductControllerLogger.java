@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 public class ProductControllerLogger {
-    @Before("execution (public ru.education.productms.models.DTO.ProductDTO " +
+    @Before("execution (public ru.education.core.model.dto.ProductDTO " +
             "ru.education.productms.controllers.ProductController.findByName(*))")
     public void beforeRequestFindProductByName(JoinPoint jp){
         MethodSignature ms = (MethodSignature) jp.getSignature();
