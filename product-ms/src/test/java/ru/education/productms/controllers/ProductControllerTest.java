@@ -38,18 +38,10 @@ class ProductControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.name", is("Lams")))
                 .andExpect(jsonPath("$.id", is(1)));
-//                .andExpect(jsonPath("$.category.*", is("NEW"))); todo - не понятно почему значение в тесте but: was <["NEW"]>
 
     }
 
-//    @Test
-//    void findByNameWrongIdTest() throws Exception {
-//        mvc.perform(get(URL_PREFIX+"/find/21")
-//                .contentType(MediaType.APPLICATION_JSON))
-//                .andExpect(status().isOk())
-//                .andExpect(status().is5xxServerError());
-//
-//    }
+
 
     @Test
     void findProductsByIDSWrongInputTest() throws Exception {
@@ -104,7 +96,6 @@ class ProductControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id", is(1)))
                 .andExpect(jsonPath("$.name", is("Lams")))
-//                .andExpect(jsonPath("$.category.*", is("NEW")))
                 .andExpect(jsonPath("$.price", is(200.0)))
                 .andExpect(jsonPath("$.quantity", is(100)))
                 .andExpect(jsonPath("$.description", is("NO DESCRIPTION")))
@@ -118,6 +109,5 @@ class ProductControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id", is(1)))
                 .andExpect(jsonPath("$.name", is("NEW")));
-//                .andExpect(jsonPath("$.productList", is("NEW")))
     }
 }

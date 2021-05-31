@@ -15,17 +15,12 @@ public class ProductItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-//todo - как лучше тут сделать? оставить тут или вынести как отдельные сущности или вообще через Storge сделать
+
     @Column(name = "price")
     private Double price;
 
     @Column(name ="quantity")
     private Integer quantity;
-
-
-    //@OneToOne
-    //@Column(name="storage_id")
-    //private Storage storage
 
     @OneToOne
     @JoinColumn(name = "product_id")

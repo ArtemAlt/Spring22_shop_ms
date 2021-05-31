@@ -5,6 +5,12 @@ spring:
     discovery:
       enabled: true
     gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
       metrics:
         enabled: true
       discovery:
@@ -24,6 +30,8 @@ spring:
           uri: lb://ORDER-MS
           predicates:
             - Path=/orders/**
+      default-filters:
+            - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
     loadbalancer:
       ribbon:
         enabled: false

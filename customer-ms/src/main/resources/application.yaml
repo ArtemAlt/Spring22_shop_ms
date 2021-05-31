@@ -5,6 +5,8 @@ server:
 
 
 spring:
+  redis:
+    port: 6379
   cloud:
     discovery:
       enabled: true

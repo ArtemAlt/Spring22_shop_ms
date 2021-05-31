@@ -31,12 +31,10 @@ public class Customer {
     private ShopAccount account;
 
     @OneToMany (mappedBy = "name")
-    private List<Role> role;
+    private List<ShopRole> shopRole;
 
-    public void addRoleCustomer (Role role){
-        this.role.add(role);
+    public void addRoleCustomer (ShopRole shopRole){
+        this.shopRole.add(shopRole);
     }
 
-//    @OneToMany(mappedBy = "currentCustomer")
-//    private List<Orders> ordersList;
 }
